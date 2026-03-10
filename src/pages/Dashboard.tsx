@@ -1,4 +1,4 @@
-import { TrendingUp, TrendingDown, Activity, Users, DollarSign, ShoppingCart } from 'lucide-react'
+import { Activity, Users, DollarSign, ShoppingCart } from 'lucide-react'
 import StatCard from '../components/StatCard'
 import RevenueChart from '../components/RevenueChart'
 import ActivityChart from '../components/ActivityChart'

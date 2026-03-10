@@ -8,14 +8,14 @@ export default {
     extend: {
       colors: {
         terminal: {
-          bg: '#0f0a1e',
-          surface: '#1a0f2e',
-          border: '#3d2a5c',
-          accent: '#c026d3',
-          warning: '#f59e0b',
-          error: '#ef4444',
-          text: '#f3e8ff',
-          muted: '#a78bfa',
+          bg: 'var(--terminal-bg)',
+          surface: 'var(--terminal-surface)',
+          border: 'var(--terminal-border)',
+          accent: 'var(--terminal-accent)',
+          warning: 'var(--terminal-warning)',
+          error: 'var(--terminal-error)',
+          text: 'var(--terminal-text)',
+          muted: 'var(--terminal-muted)',
         }
       },
       fontFamily: {

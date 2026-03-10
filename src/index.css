@@ -3,8 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  [data-theme="dark"] {
+    --terminal-bg: #0f0a1e;
+    --terminal-surface: #1a0f2e;
+    --terminal-border: #3d2a5c;
+    --terminal-accent: #c026d3;
+    --terminal-warning: #f59e0b;
+    --terminal-error: #ef4444;
+    --terminal-text: #f3e8ff;
+    --terminal-muted: #a78bfa;
+  }
+
+  [data-theme="light"] {
+    --terminal-bg: #faf8fc;
+    --terminal-surface: #ffffff;
+    --terminal-border: #e9d5ff;
+    --terminal-accent: #a855f7;
+    --terminal-warning: #f59e0b;
+    --terminal-error: #ef4444;
+    --terminal-text: #1e1b4b;
+    --terminal-muted: #6b21a8;
+  }
+
   * {
     @apply border-terminal-border;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out;
   }
 
   body {
@@ -20,7 +43,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-terminal-border hover:bg-terminal-accent/50 transition-colors;
+    background-color: var(--terminal-border);
+    transition: background-color 200ms;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in srgb, var(--terminal-accent) 50%, transparent);
   }
 }
 
@@ -30,7 +58,8 @@
   }
 
   .card:hover {
-    @apply border-terminal-accent shadow-lg shadow-terminal-accent/10;
+    border-color: var(--terminal-accent);
+    box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--terminal-accent) 10%, transparent);
   }
 
   .btn {

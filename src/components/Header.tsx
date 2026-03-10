@@ -1,6 +1,9 @@
-import { Bell, Search, User } from 'lucide-react'
+import { Bell, Search, User, Sun, Moon } from 'lucide-react'
+import { useTheme } from '../contexts/ThemeContext'
 
 export default function Header() {
+  const { theme, toggleTheme } = useTheme()
+
   return (
     <header className="h-16 bg-terminal-surface border-b-2 border-terminal-border flex items-center justify-between px-6">
       <div className="flex items-center gap-4 flex-1 max-w-xl">
@@ -15,6 +18,13 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-4">
+        <button
+          onClick={toggleTheme}
+          className="relative p-2 hover:bg-terminal-bg border-2 border-transparent hover:border-terminal-accent transition-all"
+          aria-label="Toggle theme"
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        </button>
         <button className="relative p-2 hover:bg-terminal-bg border-2 border-transparent hover:border-terminal-accent transition-all">
           <Bell className="w-5 h-5" />
           <span className="absolute top-1 right-1 w-2 h-2 bg-terminal-error rounded-full animate-pulse" />

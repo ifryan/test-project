@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-terminal-border;
+  }
+
+  body {
+    @apply bg-terminal-bg text-terminal-text font-body antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-terminal-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-terminal-border hover:bg-terminal-accent/50 transition-colors;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-terminal-surface border-2 border-terminal-border p-6 transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply border-terminal-accent shadow-lg shadow-terminal-accent/10;
+  }
+
+  .btn {
+    @apply px-4 py-2 font-mono text-sm font-medium border-2 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-terminal-accent text-terminal-bg border-terminal-accent hover:bg-transparent hover:text-terminal-accent;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent text-terminal-text border-terminal-border hover:border-terminal-accent hover:text-terminal-accent;
+  }
+}

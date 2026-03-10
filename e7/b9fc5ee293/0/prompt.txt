@@ -1,0 +1,5 @@
+帮我初始化一个测试用的dashboard项目，使用react 最佳实践skills
+
+---
+
+帮我修改一下配色方案，然后push
